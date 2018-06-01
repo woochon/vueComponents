@@ -7,7 +7,7 @@
           @on-change="changePage"></Page>
     <!--<upload-img></upload-img>-->
     <!--<span class="icon-camera"></span>-->
-    <button @click="alertSome">弹框组件</button>
+    <!--<button @click="alertSome">弹框组件</button>
     <div class="navigator borderOne"></div>
     <div id="alertBox" v-show="show">
       <div class="boxWrap">
@@ -130,13 +130,21 @@
         <span class="icon-home2" @click="chose"></span>
       </div>
     </div>
+    <partingLine message="分割线" :fontSize="fontSize"></partingLine>-->
+    <rating></rating>
+    <!--<star :size="36" :score="2.5"></star>-->
+    <library></library>
   </div>
 </template>
 
 <script>
-import Page from './Page.vue';
-import uploadImg from './uploadImg.vue'
-import alertBox from './alertBox/alertBox.vue'
+import Page from './page/Page.vue';
+import uploadImg from './uploadImg/uploadImg.vue';
+/* import alertBox from './alertBox/alertBox.vue'; */
+import partingLine from './partingLine/partingLine.vue';
+import rating from './rating/rating.vue';
+import star from './star/star.vue';
+import library from './library/library.vue';
 
 export default {
   name: 'HelloWorld',
@@ -147,6 +155,7 @@ export default {
       showSelect: true,
       showElevator: true,
       show: false,
+      fontSize: 16
     };
   },
   methods: {
@@ -156,15 +165,18 @@ export default {
     alertSome () {
       this.show = true;
     },
-    chose(){
-      this.show=false;
+    chose () {
+      this.show = false;
     }
 
   },
   components: {
     Page,
     uploadImg,
-      alertBox
+    partingLine,
+    rating,
+    star,
+    library
   }
 };
 </script>

@@ -68,12 +68,12 @@ export default {
   name: 'alertBox',
   data () {
     return {
-        showAlert:true,
+      showAlert: true
     };
   },
   methods: {
-    close(){
-        this.showAlert=false;
+    close () {
+      this.showAlert = false;
     }
   }
 };
